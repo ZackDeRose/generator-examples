@@ -1,6 +1,28 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "fibonnacci": {
+      "root": "libs/fibonnacci",
+      "sourceRoot": "libs/fibonnacci/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/fibonnacci/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/fibonnacci/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/workspace"
   }
